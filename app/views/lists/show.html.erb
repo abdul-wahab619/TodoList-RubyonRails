@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h1 class="panel-title">List Details</h1>
+    </div>
+    <div class="panel-body">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Description</th>
+            <th>Completed</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><%= @list.description %></td>
+            <td><%= @list.completed ? "Yes" : "No" %></td>
+            <td>
+              <div class="btn-group" role="group">
+                <%= link_to "Edit", edit_list_path(@list), class: "btn btn-primary mr-2" %>
+                <%= link_to "Back", lists_path, class: "btn btn-secondary mr-2" %>
+                <%= button_to "Destroy", @list, method: :delete, class: "btn btn-danger", data: { confirm: 'Are you sure?' } %>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

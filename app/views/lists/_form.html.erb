@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <%= form_with(model: list) do |form| %>
+        <% if list.errors.any? %>
+          <div class="alert alert-danger">
+            <h4><%= pluralize(list.errors.count, "error") %> prohibited this list from being saved:</h4>
+            <ul>
+              <% list.errors.each do |error| %>
+                <li><%= error.full_message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="form-group">
+          <%= form.label :description, class: "form-label" %>
+          <%= form.text_field :description, class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :completed, class: "form-check-label" %>
+          <%= form.check_box :completed, class: "form-check-input" %>
+        </div>
+
+        <div class="text-center">
+          <%= form.submit "Save Changes", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

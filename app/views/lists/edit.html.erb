@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h1 class="panel-title">Editing list</h1>
+    </div>
+    <div class="panel-body">
+      <%= render "form", list: @list %>
+      <div class="form-group">
+        <%= link_to "Show this list", @list, class: "btn btn-primary" %> |
+        <%= link_to "Back to lists", lists_path, class: "btn btn-secondary" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+

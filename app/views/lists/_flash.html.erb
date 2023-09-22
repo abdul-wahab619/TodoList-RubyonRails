@@ -1,0 +1,10 @@
+<br/>
+
+<% flash.each do |name, msg| %>
+  <div class="alert alert-warning alert-dismissible d-flex justify-content-between">
+    <%= msg %>
+    <%= content_tag(:button, '×', class: 'close',data: { turbo_method: :delete  }) %>
+  </div>
+<% end %>
+
+
